@@ -1,26 +1,32 @@
 
 function solution(H) {
   let length = H.length;
+  // 2개의 배너를 위해 왼쪽/오른쪽에서 각각 진입
   let maxFromLeft = [];
   let maxFromRight = [];
   
   let currentMax = 0;
+  // 왼쪽 배너의 최대값 
   for (let i = 0; i < length; i++) {
     currentMax = currentMax >= H[i] ? currentMax : H[i];
     maxFromLeft.push(currentMax);
   }
   
   currentMax = 0;
+  // 오른쪽 배너의 최대값
   for (let i = length - 1; i > -1; i--) {
     currentMax = currentMax >= H[i] ? currentMax : H[i];
     maxFromRight.push(currentMax);
   }
   maxFromRight.reverse();
   
-  // 최대 값을 정의
+  // result 최댓 유효 값을 정의
   let result = Number.MAX_VALUE;
   for (let i = 1; i < length; i++) {
-    result = Math.min(result, maxFromLeft[i-1]*(i) + maxFromRight[i]*(length-i))
+    // for 문을 돌면서 최소 넓이의 result을 지닌다.
+    // for 문을 돌면서 배너를 2개로 나눌 기준값을 찾는다 (또는 1개)
+    
+    result = Math.min(result, maxFromLeft[i-1]*i + maxFromRight[i]*(length-i));
   }
   
   return result;
@@ -34,7 +40,7 @@ solution([3,1,4]);
 
 
 
-question () {
+function question () {
 //   There are 
 // N
 //  rectangular buildings standing along the road next to each other. The 

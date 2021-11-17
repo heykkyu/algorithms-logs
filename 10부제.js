@@ -12,4 +12,4 @@ function soloution(day, cars) {
 
 
 console.log(soloution(3, [25, 23, 11,47,53,17,33]));
-console.log(soloution(3, [12,20,54,30,87,91,30]));
+console.log(soloution(7, [12,20,54,30,87,91,30]));

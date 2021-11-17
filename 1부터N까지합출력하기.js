@@ -8,4 +8,4 @@ function soloution(n) {
   return answer;
 }
 
-console.log(soloution(6));
+console.log(soloution(10));

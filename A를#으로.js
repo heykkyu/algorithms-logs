@@ -1,4 +1,4 @@
-function soloution(str) {
+function solution2(str) {
   let answer;
   
   answer = str.split("").reduce((accu, i) => {
@@ -12,5 +12,13 @@ function soloution(str) {
   return answer;
 }
 
+function solution(str) {
+  let answer = str;
 
-console.log(soloution("BANANA"));
+  answer = answer.replace(/A/g, "#");
+
+  return answer;
+}
+
+
+console.log(solution2("BANANA"));
